@@ -15,7 +15,7 @@ end
 
 function state.textinput(t) end
 
-function state.keypressed(key, scancode, isrepeat, switchState)
+function state.keypressed(key, scancode, isrepeat, switchState, user_id)
 	if scancode == "up" or scancode == "down" then -- move down
 		if loginButton.selected == false then
 			loginButton.selected = true
@@ -30,12 +30,15 @@ function state.keypressed(key, scancode, isrepeat, switchState)
 		if registerButton.selected == true then
 			switchState("register")
 			config.sounds.enter:clone():play()
+		elseif loginButton.selected then
+			switchState("login")
+			config.sounds.enter:clone():play()
 		end
 	end
 end
 
 function state.draw()
-	love.graphics.draw(config.images.menuBackground, 0, -150)
+	love.graphics.draw(config.images.menuBackground, 0, -(love.graphics.getHeight() / 4))
 	love.graphics.setFont(config.fonts.big)
 	loginButton:draw()
 	registerButton:draw()

@@ -3,6 +3,7 @@ local x = 1
 
 config.fonts = {
 	big = love.graphics.newFont("DepartureMonoNerdFontMono-Regular.otf", 30),
+	medium = love.graphics.newFont("DepartureMonoNerdFontMono-Regular.otf", 20),
 	small = love.graphics.newFont("DepartureMonoNerdFontMono-Regular.otf", 15),
 }
 
@@ -22,6 +23,8 @@ config.sounds = {
 	},
 	enter = love.audio.newSource("sounds/ui_sounds/Retro9.ogg", "static"),
 	back = love.audio.newSource("sounds/ui_sounds/Wood Block2.ogg", "static"),
+	slay = love.audio.newSource("sounds/slay.mp3", "static"),
+	beep = love.audio.newSource("sounds/beep.mp3", "static"),
 }
 
 config.images = {

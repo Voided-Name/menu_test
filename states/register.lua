@@ -6,6 +6,7 @@ local registerTableButtons = {}
 local registerPointer
 local config = require("config")
 local auth = require("api.auth")
+local text = require("text")
 
 function state.load()
 	Object = require("classic")
@@ -102,6 +103,8 @@ end
 
 function state.draw()
 	love.graphics.draw(config.images.menuBackground, 0, -150)
+	love.graphics.setFont(config.fonts.small)
+	text.printext("Register", 2, 1)
 	love.graphics.setFont(config.fonts.big)
 
 	backToMain:draw()
